@@ -1,7 +1,10 @@
 `ifndef SIC_CPU_SV
 `define SIC_CPU_SV
 
-module sic_cpu #(parameter ADDRESS_WIDTH = 15, DATA_WIDTH = 24)(
+module sic_cpu #(
+    parameter ADDRESS_WIDTH = 15,
+    parameter DATA_WIDTH = 24
+) (
     input logic clk,
     input logic rst,
     input logic [DATA_WIDTH-1:0] instruction,
@@ -40,7 +43,11 @@ module sic_cpu #(parameter ADDRESS_WIDTH = 15, DATA_WIDTH = 24)(
     logic [2:0] condition_flags;
 
     //instantiating instruction decode
-    instruction_decoder u_decoder(
+    instruction_decoder #(
+        .DATA_WIDTH(24),
+        .OPCODE_WIDTH(6),
+        .ADDRESS_WIDTH(15)
+    ) u_decoder(
         .instruction(IR),
         .opcode(opcode),
         .address(address),
@@ -48,7 +55,11 @@ module sic_cpu #(parameter ADDRESS_WIDTH = 15, DATA_WIDTH = 24)(
     );
 
     //instantiating alu 
-    alu u_alu(
+    alu #(
+        .DATA_WIDTH(24),
+        .OPCODE_WIDTH(6),
+        .FLAG_WIDTH(3)
+    ) u_alu(
         .opcode(opcode),
         .A(A),
         .B(memory_read_data),
