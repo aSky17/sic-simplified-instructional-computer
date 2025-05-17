@@ -1,0 +1,37 @@
+# QuestaSim / ModelSim / Questa Work Directory
+work/
+vsim.wlf
+transcript
+*.log
+*.vcd
+*.wlf
+*.svf
+*.ucdb
+*.bak
+*.ini
+*.idx
+*.dat
+*.key
+*.mif
+*.hex
+*.map
+*.mem
+*.bin
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.elf
+*.out
+*.vstf
+*.sdf
+*.do
+*.vst
+*.wdb
+
+# Common backup & swap files
+*~
+*.swp
+*.swo
+*.tmp
