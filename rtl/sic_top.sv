@@ -1,7 +1,7 @@
 `ifndef SIC_TOP_SV
 `define SIC_TOP_SV
 
-module moduleName #(
+module sic_top #(
     parameter ADDRESS_WIDTH = 15,
     parameter DATA_WIDTH = 24
 )(

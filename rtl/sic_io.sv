@@ -1,7 +1,7 @@
 `ifndef SIC_IO_SV
 `define SIC_IO_SV
 
-module moduleName (
+module sic_io (
     input logic clk,
     input logic rst,
     input logic read_enable,
